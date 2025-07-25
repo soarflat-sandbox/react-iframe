@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <body>
+    <h1>iframe1</h1>
+    <button onclick="sendMessage('A')">親ページを介してiframe2にデータ(A)を送信</button>
+    <button onclick="sendMessage('B')">親ページを介してiframe2にデータ(B)を送信</button>
+    <p>iframe2から親ページを介して送信されたデータ: <span id="data"></span></p>
+    <script>
+      function sendMessage(data) {
+        window.parent.postMessage({ from: 'iframe1', message: `${data}` }, '*');
+      }
+
+      window.addEventListener('message', event => {
+        if (event.data?.to === 'iframe1') {
+          console.log('Page1 received:', event.data);
+          document.getElementById('data').innerText = event.data.message;
+        }
+      });
+    </script>
+  </body>
+</html>
