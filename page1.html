@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
   <body>
-    <h1>iframe1</h1>
-    <button onclick="sendMessage('A')">親ページを介してiframe2にデータ(A)を送信</button>
-    <button onclick="sendMessage('B')">親ページを介してiframe2にデータ(B)を送信</button>
-    <p>iframe2から親ページを介して送信されたデータ: <span id="data"></span></p>
+    <h1>検索画面</h1>
+    <button onclick="sendMessage('A')">3D CAD設計画面を介して設計画面にデータ(A)を送信</button>
+    <button onclick="sendMessage('B')">3D CAD設計画面を介して設計画面にデータ(B)を送信</button>
+    <p>設計画面から3D CAD設計画面を介して送信されたデータ: <span id="data"></span></p>
     <script>
       function sendMessage(data) {
         window.parent.postMessage({ from: 'iframe1', message: `${data}` }, '*');
