@@ -31,9 +31,9 @@ function App() {
 
   return (
     <>
-      <h1>親ページ</h1>
-      <p>iframe1から送信されたデータ。iframe2に送信する。: {message}</p>
-      <p>iframe2から送信されたデータ。iframe1に送信する。: {message2}</p>
+      <h1>3D CAD設計画面</h1>
+      <p>検索画面から送信されたデータ。設計画面に送信する。: {message}</p>
+      <p>設計画面から送信されたデータ。検索画面に送信する。: {message2}</p>
       <div style={{ display: 'flex', gap: '1rem' }}>
         <iframe ref={iframe1Ref} src="/react-iframe/page1.html" width={600} height={300} />
         <iframe ref={iframe2Ref} src="/react-iframe/page2.html" width={600} height={300} />
